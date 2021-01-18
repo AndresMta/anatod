@@ -1,0 +1,183 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Header */
+
+.header {
+    height: 15rem;
+    background: #4568DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.header_container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header_nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_image {
+    text-align: center;
+}
+
+.header_image img {
+    width: 70%;
+}
+
+.header_nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.header_nav a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .header_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header_image {
+        text-align: left;
+    }
+    .header_nav {
+        display: unset;
+    }
+    .header_nav a {
+        margin-left: 20px;
+    }
+}
+
+/* Formulario */
+
+.main_container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    min-height: 25rem;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 35rem; 
+    height: auto;
+    background-color: white;
+    box-shadow: 0px 0px 4px 1px #ccc;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.form h1 {
+    font: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.form-group label {
+    margin-bottom: .5rem;
+}
+
+.form-group input, select {
+    padding: .5rem;
+}
+
+.mensaje-error {
+    background-color: indianred;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.input-error {
+    border: 2px solid indianred;
+}
+
+/* Footer */
+
+.footer {
+    height: 7rem;
+    display: flex;
+    background: #8e9eab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.footer_container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer_image {
+    display: flex;
+    justify-content: center;
+}
+
+.footer_image img {
+    width: 50%;
+}
+
+
+.val-container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    min-height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.val-container_message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.val-container_message > svg {
+    font-size: 10rem;
+}
+
+.fa-check-circle {
+    color: green;
+}
+
+.fa-times-circle {
+    color: red;
+}
