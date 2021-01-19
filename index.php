@@ -1,7 +1,8 @@
 <?php include './includes/templates/header.php' ?>
 
         <div class="main_container">
-            <form class="form" id="form" action="./val.php" onsubmit="return validarFormulario()" method="POST">
+        
+            <form class="form" id="form" action="./validarInsercion.php" onsubmit="return validarFormulario()" method="POST">
                 <h1>Ingresar Cliente.</h1>
                 <div class="form-group">
                     <label for="nombre">Nombre: </label>

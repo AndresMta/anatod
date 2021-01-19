@@ -16,23 +16,23 @@
                 </thead>
                 <tbody class="table-body">
                     <?php
-                    try {
-                        require_once('includes/database/functions.php');
-                        $clientes = obtenerClientes();
+                        try {
+                            require_once('includes/database/functions.php');
+                            $clientes = obtenerClientes();
 
-                        while($cliente = mysqli_fetch_assoc($clientes)) { ?>
-                            <tr class="table-row">
-                                <td><?php echo $cliente['cliente_id']; ?></td>
-                                <td><?php echo $cliente['cliente_nombre']; ?></td>
-                                <td><?php echo $cliente['cliente_dni']; ?></td>
-                                <td><?php echo $cliente['localidad_nombre']; ?></td>
-                                <td><?php echo $cliente['provincia_nombre']; ?></td>
-                                <td><a href="editar.php?id=<?php echo $cliente['cliente_id']; ?>"><i class="fas fa-pen-square"></i></a></td>
-                            </tr> <?php
+                            while($cliente = mysqli_fetch_assoc($clientes)) { ?>
+                                <tr class="table-row">
+                                    <td><?php echo $cliente['cliente_id']; ?></td>
+                                    <td><?php echo $cliente['cliente_nombre']; ?></td>
+                                    <td><?php echo $cliente['cliente_dni']; ?></td>
+                                    <td><?php echo $cliente['localidad_nombre']; ?></td>
+                                    <td><?php echo $cliente['provincia_nombre']; ?></td>
+                                    <td><a href="editarCliente.php?id=<?php echo $cliente['cliente_id']; ?>"><i class="fas fa-pen-square"></i></a></td>
+                                </tr> <?php
+                            }
+                        } catch (\Throwable $th) {
+                            echo 'Error';
                         }
-                    } catch (\Throwable $th) {
-                        echo 'Error';
-                    }
                     ?>
                 </tbody>
             </table>

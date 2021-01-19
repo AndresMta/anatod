@@ -39,4 +39,24 @@ function obtenerClientes() {
     return $results;
 }
 
+function obtenerClienteId($id) {
+    global $connection;
+
+    $sql = "SELECT * FROM clientes WHERE cliente_id = $id";
+    $results = mysqli_query($connection, $sql);
+
+    return $results;
+}
+
+function editarCliente($id, $nombre, $dni, $localidad) {
+    global $connection;
+
+    $statemet = $connection -> prepare("UPDATE clientes SET cliente_nombre = ?, cliente_dni = ?, cliente_localidad = ? WHERE cliente_id = ? ");
+    $statemet -> bind_param("ssii", $nombre, $dni, $localidad, $id);
+    $exito = $statemet -> execute();
+    $statemet -> close();
+
+    return $exito;
+}
+
 ?>
