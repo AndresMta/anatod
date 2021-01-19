@@ -1,6 +1,6 @@
 <?php
 
-require_once('includes/database/dataBase.php');
+require_once('includes/database/class.database.php');
 
 $dataBase = new class_db();
 $connection = $dataBase -> conn;
@@ -57,6 +57,21 @@ function editarCliente($id, $nombre, $dni, $localidad) {
     $statemet -> close();
 
     return $exito;
+}
+
+function obtenerClientesLocalidades() {
+    global $connection;
+
+    $sql = 'SELECT provincia_id, provincia_nombre, localidad_nombre, COUNT(*) AS cantidad_clientes 
+            FROM localidades 
+            JOIN provincias 
+            ON localidades.localidad_provincia = provincias.provincia_id 
+            JOIN clientes 
+            ON clientes.cliente_localidad = localidades.localidad_id 
+            GROUP BY localidad_id;';
+    $results = mysqli_query($connection, $sql);
+
+    return $results;
 }
 
 ?>

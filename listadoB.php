@@ -14,48 +14,23 @@
                     </tr>
                 </thead>
                 <tbody class="table-body">
-                    <tr class="table-row">
-                        <td>111-111-111</td>
-                        <td>Buenos Aires</td>
-                        <td>Bahia Blanca</td>
-                        <td>159</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td>111-111-111</td>
-                        <td>Buenos Aires</td>
-                        <td>Bahia Blanca</td>
-                        <td>159</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td>111-111-111</td>
-                        <td>Buenos Aires</td>
-                        <td>Bahia Blanca</td>
-                        <td>159</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td>111-111-111</td>
-                        <td>Buenos Aires</td>
-                        <td>Bahia Blanca</td>
-                        <td>159</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td>111-111-111</td>
-                        <td>Buenos Aires</td>
-                        <td>Bahia Blanca</td>
-                        <td>159</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td>111-111-111</td>
-                        <td>Buenos Aires</td>
-                        <td>Bahia Blanca</td>
-                        <td>159</td>
-                    </tr>
-                    <tr class="table-row">
-                        <td>111-111-111</td>
-                        <td>Buenos Aires</td>
-                        <td>Bahia Blanca</td>
-                        <td>159</td>
-                    </tr>
+                    <?php 
+                        try {
+                            require_once('includes/database/functions.php');
+                            $clientesLocalidades = obtenerClientesLocalidades();
+                          
+                            while($clientesLocalidad = mysqli_fetch_assoc($clientesLocalidades)) {  ?>
+                                <tr class="table-row">
+                                    <td><?php echo $clientesLocalidad['provincia_id']; ?></td>
+                                    <td><?php echo $clientesLocalidad['provincia_nombre']; ?></td>
+                                    <td><?php echo $clientesLocalidad['localidad_nombre']; ?></td>
+                                    <td><?php echo $clientesLocalidad['cantidad_clientes']; ?></td>
+                                </tr> <?php
+                            }
+                        } catch (\Throwable $th) {
+                            echo 'Error';
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>
